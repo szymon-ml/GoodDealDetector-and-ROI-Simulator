@@ -72,20 +72,20 @@ The final `XGBClassifier` focuses on the minority “Good Flip” class:
 
 ### 6.1 Intrinsic Value vs Market Price Scatter (predicted vs actual scores of the regressor)
 
-![Intrinsic Value vs Market Price Scatter](intrinsic_vs_market.png)
+![Intrinsic Value vs Market Price Scatter](images/intrinsic_vs_market.png)
 
 ### 6.2 Regression Model Feature Importance
 
-![Regression Model Feature Importance](reg_feature_importance.png)
+![Regression Model Feature Importance](images/reg_feature_importance.png)
 
 ### 6.3 Classification Model's Confusion Matrix
 
-![Classification Model's Confusion Matrix](confusion_matrix.png)
+![Classification Model's Confusion Matrix](images/confusion_matrix.png)
 
 ### 6.4 Classification Model's Ability to Separate Classes
 
-![Classification Model's Ability to Separate Classes](model_separating_classes.png)
+![Classification Model's Ability to Separate Classes](images/model_separating_classes.png)
 
 ### 6.5 Classification Model Feature Importance
 
-![Classification Model Feature Importance](reg_feature_importance.png)
+![Classification Model Feature Importance](images/reg_feature_importance.png)
