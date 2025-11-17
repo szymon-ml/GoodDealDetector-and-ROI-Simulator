@@ -26,33 +26,45 @@ This tool turns raw housing data into actionable investment insights, serving as
 
 ---
 
-## 3. Key Results
+## 3. Limitations / Assumptions
 
-The final `XGBClassifier` focuses on the minority “Good Flip” class:
-
-- **Precision (Good Flip):** 87%  
-- **Recall (Good Flip):** 100%  
-- **F1 Score (Good Flip):** 93%  
-
-**Interpretation:**
-
-- **Recall = 100%** → All potential flips are captured, minimizing missed opportunities.  
-- **Precision = 87%** → When flagged as a flip, there’s a high likelihood it’s actually profitable, reducing manual review effort.
-
----
-
-## 4. Limitations / Assumptions
-
-- The `Flipping_Potential` target is engineered using regression output, not direct investor labeling. This inflates metrics like F1, precision, and recall.  
-- Without a mathematically derived target, metrics would likely be lower. The model mainly learned to reverse-engineer the formula used to define a “good flip.” In practice, an actual investor would provide these labels, allowing the model to capture subjective decisions and nuanced preferences that aren’t purely mathematical.  
+**IMPORTANT:** The `Flipping_Potential` target is engineered using regression output, not direct investor labeling. This inflates metrics like F1, precision, and recall. Without a mathematically derived target, metrics would likely be lower. The model mainly learned to reverse-engineer the formula used to define a “good flip.” In practice, an actual investor would provide these labels, allowing the model to capture subjective decisions and nuanced preferences that aren’t purely mathematical.  
 - Feature contributions are dominated by the `Underpriced` variable, reflecting the engineered logic behind the target. Metrics primarily measure the model’s ability to reproduce domain-informed signals, not purely raw data signals.  
 - The model assumes market conditions at purchase resemble those at sale. Real-world deployment requires up-to-date sales data.
 
 ---
 
-## 5. Process Summary
+## 4. Process Summary
 
 The pipeline begins with exploratory data analysis on key house characteristics (overall quality, seasonality, neighborhood, renovation potential). An XGBoost regression model estimates intrinsic value. Residuals and engineered features are then used to derive the `Flipping_Potential` target. Classification models (Logistic Regression, Random Forest, XGBoost) are trained using custom scoring metrics to handle class imbalance and emphasize correct identification of profitable flips. The final model combines domain-informed features and raw data, producing actionable, investor-focused predictions.
+
+---
+
+## 5. Key Results
+
+### 5.1 Regressor
+
+After training and tuning three models (Ridge, Random Forest, and XGBoost), the `XGBRegressor` was the clear winner, with the lowest cross-validation log-RMSE.
+
+**Final Scores**
+
+We used the champion model to make final predictions and calculated its error in real-world terms (dollars).
+
+* **Final Model RMSE (in Dollars): `$27,015
+* **Final Model RMSE (in log-scale): `0.1134
+
+### 5.2 Classifier
+
+The final `XGBClassifier` focuses on the minority “Good Flip” class:
+
+- **Precision (Good Flip):** 94%  
+- **Recall (Good Flip):** 100%  
+- **F1 Score (Good Flip):** 97%  
+
+**Interpretation:**
+
+- **Recall = 100%** → All potential flips are captured, minimizing missed opportunities.  
+- **Precision = 94%** → When flagged as a flip, there’s a high likelihood it’s actually profitable, reducing manual review effort.
 
 ---
 
@@ -60,14 +72,20 @@ The pipeline begins with exploratory data analysis on key house characteristics 
 
 ### 6.1 Intrinsic Value vs Market Price Scatter (predicted vs actual scores of the regressor)
 
-### Regression Model Feature Importance
+![Intrinsic Value vs Market Price Scatter](intrinsic_vs_market.png)
 
-###
+### 6.2 Regression Model Feature Importance
 
-### 6.1 Classification Model's Confusion Matrix
+![Regression Model Feature Importance](reg_feature_importance.png)
 
-### 6.2 Classification Model's Ability to Separate Classes
+### 6.3 Classification Model's Confusion Matrix
 
-### 6.3 Classification Model Feature Importance
+![Classification Model's Confusion Matrix](confusion_matrix.png)
 
-### 6.4
+### 6.4 Classification Model's Ability to Separate Classes
+
+![Classification Model's Ability to Separate Classes](model_separating_classes.png)
+
+### 6.5 Classification Model Feature Importance
+
+![Classification Model Feature Importance](reg_feature_importance.png)
