@@ -56,8 +56,18 @@ The pipeline begins with exploratory data analysis on key house characteristics 
 
 ---
 
-## Feature Importance
+## 6. Key Vizualizations
 
-The `Underpriced` feature dominates, which is expected—it mirrors the logic used to define `Flipping_Potential`. Other features, such as structural details, property characteristics, and intrinsic value, provide additional context.
+### 6.1 Intrinsic Value vs Market Price Scatter (predicted vs actual scores of the regressor)
 
-**Takeaway:** The model learned the intended engineered relationships while incorporating supporting property data, confirming that it reproduces the designed target signal.
+### Regression Model Feature Importance
+
+###
+
+### 6.1 Classification Model's Confusion Matrix
+
+### 6.2 Classification Model's Ability to Separate Classes
+
+### 6.3 Classification Model Feature Importance
+
+### 6.4
