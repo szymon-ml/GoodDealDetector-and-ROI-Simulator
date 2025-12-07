@@ -8,6 +8,8 @@ A machine-learning pipeline that identifies underpriced properties based on hist
 ### 2. **ROI Simulator**
 A financial model that estimates investment returns for potential flips or rentals. Allows scenario testing based on renovation budgets, holding periods, financing structures, and market assumptions.
 
+----
+
 Each project has its own folder with a dedicated README explaining data requirements, setup, methodology, and usage.
 
 This repo is under active development.
