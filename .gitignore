@@ -5,3 +5,9 @@
 # Ignore local environment variables
 .env
 .env.local
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
