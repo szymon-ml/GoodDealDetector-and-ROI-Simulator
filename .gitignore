@@ -1,0 +1,7 @@
+# --- macOS System Files ---
+.DS_Store
+
+# --- Development Hygiene ---
+# Ignore local environment variables
+.env
+.env.local

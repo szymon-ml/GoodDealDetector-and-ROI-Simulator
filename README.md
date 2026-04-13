@@ -5,7 +5,7 @@ This repo contains two independent but complementary projects focused on residen
 ### 1. **Good Deal Detector**
 A machine-learning pipeline that identifies underpriced properties based on historical sales data. Includes preprocessing, feature engineering, model selection, and performance evaluation.
 
-### 2. **ROI Simulator**
+### 2. **ROI Simulator (not yet created)**
 A financial model that estimates investment returns for potential flips or rentals. Allows scenario testing based on renovation budgets, holding periods, financing structures, and market assumptions.
 
 ----
